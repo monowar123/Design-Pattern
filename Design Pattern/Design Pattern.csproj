@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Design_Pattern</RootNamespace>
     <AssemblyName>Design Pattern</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract Factory\AnimalFactory.cs" />
+    <Compile Include="Abstract Factory\Cat.cs" />
+    <Compile Include="Abstract Factory\Dog.cs" />
+    <Compile Include="Abstract Factory\IAnimal.cs" />
+    <Compile Include="Abstract Factory\Lion.cs" />
+    <Compile Include="Abstract Factory\Octopus.cs" />
+    <Compile Include="Abstract Factory\Shark.cs" />
     <Compile Include="Factory Method\CreditCardFactory.cs" />
     <Compile Include="Factory Method\CreditCardFactoryAbstract.cs" />
     <Compile Include="Factory Method\ICreditCard.cs" />
@@ -55,5 +63,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
