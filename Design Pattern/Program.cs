@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Design_Pattern.Factory_Method;
 using Design_Pattern.Abstract_Factory;
+using Design_Pattern.Builder;
 
 namespace Design_Pattern
 {
@@ -12,10 +13,10 @@ namespace Design_Pattern
     {
         static void Main(string[] args)
         {
-            //------------Call Factory Design pattern-----------
+            //----------------Call Factory Design pattern-------------
             //ICreditCard creditCard = CreditCardFactory.GetCreditCard(CreditCardType.TITANIUM);
 
-            //------------Call the Factory Method Design pattern-----------
+            //----------------Call the Factory Method Design pattern-----------
             //ICreditCard creditCard = new TitaniumFactory().CreateProduct();
 
             //if (creditCard != null)
@@ -30,14 +31,24 @@ namespace Design_Pattern
             //}
 
 
-            //--------------Call the Abstract Factory Design pattern----------------
-            AnimalFactory animalFactory = AnimalFactory.CreateAnimalFactory("Sea");
-            IAnimal animal = animalFactory.GetAnimal(AnimalType.CAT);
+            //------------------Call the Abstract Factory Design pattern----------------
+            //AnimalFactory animalFactory = AnimalFactory.CreateAnimalFactory("Sea");
+            //IAnimal animal = animalFactory.GetAnimal(AnimalType.CAT);
 
-            Console.WriteLine(animal.Speak());
-            
+            //Console.WriteLine(animal.Speak());
 
 
+            //------------------Call Builder Desing pattern----------------------
+            Report report;
+            ReportDirector reportDirector = new ReportDirector();
+
+            report = reportDirector.MakeReport(new ExcelReport());
+            report.DisplayReport();
+
+            Console.WriteLine("-----------------------");
+
+            report = reportDirector.MakeReport(new PDFReport());
+            report.DisplayReport();
 
             Console.ReadKey();
         }
