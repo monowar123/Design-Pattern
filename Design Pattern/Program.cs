@@ -8,6 +8,7 @@ using Design_Pattern.Abstract_Factory;
 using Design_Pattern.Builder;
 using Design_Pattern.Fluent_Interface;
 using Design_Pattern.Prototype;
+using Design_Pattern.SingletonPattern;
 
 namespace Design_Pattern
 {
@@ -27,9 +28,13 @@ namespace Design_Pattern
 
             //CallFluentInterfaceDesignPattern();
 
-            CallPrototypeDesignPattern();
-            
+            //CallPrototypeDesignPattern();
 
+            //CallSingletonDesignPattern();
+
+            //CallSingletonFromThread();
+
+            CallLazySingletonFromThread();
 
 
 
@@ -135,6 +140,45 @@ namespace Design_Pattern
             p1.DisplayMessage();
             Console.WriteLine("-----------------");
             p2.DisplayMessage();
+        }
+
+        static void CallSingletonDesignPattern()
+        {
+            Singleton fromTeacher = Singleton.GetInstance;
+            fromTeacher.PrintDetails("From Teacher");
+
+            Singleton fromStudent = Singleton.GetInstance;
+            fromStudent.PrintDetails("From Student");
+        }
+
+        static void CallSingletonFromThread()
+        {
+            Parallel.Invoke(
+                () =>
+                {
+                    Singleton fromTeacher = Singleton.GetInstance;
+                    fromTeacher.PrintDetails("From Teacher");
+                },
+                () =>
+                {
+                    Singleton fromStudent = Singleton.GetInstance;
+                    fromStudent.PrintDetails("From Student");
+                });
+        }
+
+        static void CallLazySingletonFromThread()
+        {
+            Parallel.Invoke(
+                () =>
+                {
+                    LazySingleton fromTeacher = LazySingleton.GetInstance;
+                    fromTeacher.PrintDetails("From Teacher");
+                },
+                () =>
+                {
+                    LazySingleton fromStudent = LazySingleton.GetInstance;
+                    fromStudent.PrintDetails("From Student");
+                });
         }
 
         #endregion
