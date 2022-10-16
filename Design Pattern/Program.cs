@@ -28,13 +28,13 @@ namespace Design_Pattern
 
             //CallFluentInterfaceDesignPattern();
 
-            //CallPrototypeDesignPattern();
+            CallPrototypeDesignPattern();
 
             //CallSingletonDesignPattern();
 
             //CallSingletonFromThread();
 
-            CallLazySingletonFromThread();
+            //CallLazySingletonFromThread();
 
 
 
@@ -185,7 +185,10 @@ namespace Design_Pattern
 
 
         #region Structural Design Patter
+        static void CallAdapterDesignPattern()
+        {
 
+        }
         #endregion
 
 

@@ -44,34 +44,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract Factory\AnimalFactory.cs" />
-    <Compile Include="Abstract Factory\Cat.cs" />
-    <Compile Include="Abstract Factory\Dog.cs" />
-    <Compile Include="Abstract Factory\IAnimal.cs" />
-    <Compile Include="Abstract Factory\Lion.cs" />
-    <Compile Include="Abstract Factory\Octopus.cs" />
-    <Compile Include="Abstract Factory\Shark.cs" />
-    <Compile Include="Builder\ExcelReport.cs" />
-    <Compile Include="Builder\PDFReport.cs" />
-    <Compile Include="Builder\Report.cs" />
-    <Compile Include="Builder\ReportBuilder.cs" />
-    <Compile Include="Builder\ReportDirector.cs" />
-    <Compile Include="Factory Method\CreditCardFactory.cs" />
-    <Compile Include="Factory Method\CreditCardFactoryAbstract.cs" />
-    <Compile Include="Factory Method\ICreditCard.cs" />
-    <Compile Include="Factory Method\MoneyBack.cs" />
-    <Compile Include="Factory Method\Platinum.cs" />
-    <Compile Include="Factory Method\Titanium.cs" />
-    <Compile Include="Fluent Interface\FluentEmployee.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\AnimalFactory.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\Cat.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\Dog.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\IAnimal.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\Lion.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\Octopus.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory\Shark.cs" />
+    <Compile Include="Creational Design Pattern\Builder\ExcelReport.cs" />
+    <Compile Include="Creational Design Pattern\Builder\PDFReport.cs" />
+    <Compile Include="Creational Design Pattern\Builder\Report.cs" />
+    <Compile Include="Creational Design Pattern\Builder\ReportBuilder.cs" />
+    <Compile Include="Creational Design Pattern\Builder\ReportDirector.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method\CreditCardFactory.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method\CreditCardFactoryAbstract.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method\ICreditCard.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method\MoneyBack.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method\Platinum.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method\Titanium.cs" />
+    <Compile Include="Creational Design Pattern\Fluent Interface\FluentEmployee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Prototype\Person.cs" />
-    <Compile Include="Singleton\LazySingleton.cs" />
-    <Compile Include="Singleton\Singleton.cs" />
+    <Compile Include="Creational Design Pattern\Prototype\Person.cs" />
+    <Compile Include="Creational Design Pattern\Singleton\LazySingleton.cs" />
+    <Compile Include="Creational Design Pattern\Singleton\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Adapter\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
