@@ -9,6 +9,7 @@ using Design_Pattern.Builder;
 using Design_Pattern.Fluent_Interface;
 using Design_Pattern.Prototype;
 using Design_Pattern.SingletonPattern;
+using Design_Pattern.Structural_Design_Pattern.Adapter;
 
 namespace Design_Pattern
 {
@@ -28,13 +29,17 @@ namespace Design_Pattern
 
             //CallFluentInterfaceDesignPattern();
 
-            CallPrototypeDesignPattern();
+            //CallPrototypeDesignPattern();
 
             //CallSingletonDesignPattern();
 
             //CallSingletonFromThread();
 
             //CallLazySingletonFromThread();
+
+
+            //----------------Structural Design Pattern-----------------
+            CallAdapterDesignPattern();
 
 
 
@@ -187,7 +192,17 @@ namespace Design_Pattern
         #region Structural Design Patter
         static void CallAdapterDesignPattern()
         {
+            string[,] employeesArray = new string[5, 4]
+            {
+                {"101","John","SE","10000"},
+                {"102","Smith","SE","20000"},
+                {"103","Dev","SSE","30000"},
+                {"104","Pam","SE","40000"},
+                {"105","Sara","SSE","50000"}
+            };
 
+            ITarget target = new EmployeeAdapter();
+            target.ProcessCompanySalary(employeesArray);
         }
         #endregion
 

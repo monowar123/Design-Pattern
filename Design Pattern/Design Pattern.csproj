@@ -68,12 +68,16 @@
     <Compile Include="Creational Design Pattern\Prototype\Person.cs" />
     <Compile Include="Creational Design Pattern\Singleton\LazySingleton.cs" />
     <Compile Include="Creational Design Pattern\Singleton\Singleton.cs" />
+    <Compile Include="Structural Design Pattern\Adapter\Employee.cs" />
+    <Compile Include="Structural Design Pattern\Adapter\EmployeeAdapter.cs" />
+    <Compile Include="Structural Design Pattern\Adapter\ITarget.cs" />
+    <Compile Include="Structural Design Pattern\Adapter\ThirdPartyBillingSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Adapter\" />
+    <Folder Include="Behavioral Design Pattern\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
