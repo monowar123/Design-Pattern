@@ -35,11 +35,11 @@ namespace Design_Pattern
 
             //CallSingletonFromThread();
 
-            //CallLazySingletonFromThread();
+            CallLazySingletonFromThread();
 
 
             //----------------Structural Design Pattern-----------------
-            CallAdapterDesignPattern();
+            //CallAdapterDesignPattern();
 
 
 
