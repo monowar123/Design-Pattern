@@ -10,6 +10,8 @@ using Design_Pattern.Fluent_Interface;
 using Design_Pattern.Prototype;
 using Design_Pattern.SingletonPattern;
 using Design_Pattern.Structural_Design_Pattern.Adapter;
+using Design_Pattern.Creational_Design_Pattern.Factory_Method_2;
+using Design_Pattern.Creational_Design_Pattern.Abstract_Factory_02;
 
 namespace Design_Pattern
 {
@@ -23,7 +25,11 @@ namespace Design_Pattern
 
             //CallFactoryMethodDesignPattern();
 
+            //CallFactoryMethod_02_DesignPattern();
+
             //CallAbstractFactoryDesignPattern();
+
+            CallAbstractFactory_02_DesignPattern();
 
             //CallBuilderDesignPattern();
 
@@ -35,7 +41,7 @@ namespace Design_Pattern
 
             //CallSingletonFromThread();
 
-            CallLazySingletonFromThread();
+            //CallLazySingletonFromThread();
 
 
             //----------------Structural Design Pattern-----------------
@@ -81,12 +87,46 @@ namespace Design_Pattern
             }
         }
 
+        static void CallFactoryMethod_02_DesignPattern()
+        {
+            ITransport transport = new RoadLogistics().GetTransport();
+            Console.WriteLine(transport.DeliverProduct());
+            Console.WriteLine("Cost: {0}", transport.CalculateCost());
+
+            transport = new SeaLogistics().GetTransport();
+            Console.WriteLine(transport.DeliverProduct());
+            Console.WriteLine("Cost: {0}", transport.CalculateCost());
+        }
+
         static void CallAbstractFactoryDesignPattern()
         {
-            AnimalFactory animalFactory = AnimalFactory.CreateAnimalFactory("Sea");
+            AnimalFactory animalFactory = AnimalFactory.CreateAnimalFactory(FactoryType.LAND);
             IAnimal animal = animalFactory.GetAnimal(AnimalType.CAT);
 
+            Console.WriteLine("Animal Factory Type: {0}", animalFactory.GetType().Name);
+            Console.WriteLine("Animal Type: {0}", animal.GetType().Name);
             Console.WriteLine(animal.Speak());
+
+            Console.WriteLine();
+
+            animalFactory = AnimalFactory.CreateAnimalFactory(FactoryType.SEA);
+            animal = animalFactory.GetAnimal(AnimalType.SHARK);
+
+            Console.WriteLine("Animal Factory Type: {0}", animalFactory.GetType().Name);
+            Console.WriteLine("Animal Type: {0}", animal.GetType().Name);
+            Console.WriteLine(animal.Speak());
+        }
+
+        static void CallAbstractFactory_02_DesignPattern()
+        {
+            IFurnitureFactory furnitureFactory = new VictorianFurnitureFactory();
+            IChair chair = furnitureFactory.GetChair();
+            ISofa sofa = furnitureFactory.GetSofa();
+            ITable table = furnitureFactory.GetTable();
+
+            Console.WriteLine("Name: {0}, Price: {1}", chair.GetName(), chair.GetPrice());
+            Console.WriteLine("Name: {0}, Price: {1}", sofa.GetName(), sofa.GetPrice());
+            Console.WriteLine("Name: {0}, Price: {1}", table.GetName(), table.GetPrice());
         }
 
         static void CallBuilderDesignPattern()

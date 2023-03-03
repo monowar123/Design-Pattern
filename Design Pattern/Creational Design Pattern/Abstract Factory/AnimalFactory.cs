@@ -9,9 +9,9 @@ namespace Design_Pattern.Abstract_Factory
     public abstract class AnimalFactory
     {
         public abstract IAnimal GetAnimal(AnimalType animalType);
-        public static AnimalFactory CreateAnimalFactory(string FactoryType)
+        public static AnimalFactory CreateAnimalFactory(FactoryType factoryType)
         {
-            if (FactoryType.Equals("Sea"))
+            if (factoryType.Equals(FactoryType.SEA))
                 return new SeaAnimalFactory();
             else
                 return new LandAnimalFactory();

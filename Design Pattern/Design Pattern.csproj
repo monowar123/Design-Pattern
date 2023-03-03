@@ -44,6 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creational Design Pattern\Abstract Factory 02\IChair.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory 02\IFurnitureFactory.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory 02\ISofa.cs" />
+    <Compile Include="Creational Design Pattern\Abstract Factory 02\ITable.cs" />
     <Compile Include="Creational Design Pattern\Abstract Factory\AnimalFactory.cs" />
     <Compile Include="Creational Design Pattern\Abstract Factory\Cat.cs" />
     <Compile Include="Creational Design Pattern\Abstract Factory\Dog.cs" />
@@ -56,6 +60,8 @@
     <Compile Include="Creational Design Pattern\Builder\Report.cs" />
     <Compile Include="Creational Design Pattern\Builder\ReportBuilder.cs" />
     <Compile Include="Creational Design Pattern\Builder\ReportDirector.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method 02\ITransport.cs" />
+    <Compile Include="Creational Design Pattern\Factory Method 02\Logistics.cs" />
     <Compile Include="Creational Design Pattern\Factory Method\CreditCardFactory.cs" />
     <Compile Include="Creational Design Pattern\Factory Method\CreditCardFactoryAbstract.cs" />
     <Compile Include="Creational Design Pattern\Factory Method\ICreditCard.cs" />

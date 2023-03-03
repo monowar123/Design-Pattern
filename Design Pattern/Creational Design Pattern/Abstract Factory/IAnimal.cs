@@ -20,6 +20,13 @@ namespace Design_Pattern.Abstract_Factory
         SHARK,
         OCTOPUS
     }
+
+    public enum FactoryType
+    {
+        SEA,
+        LAND
+    }
+
     public interface IAnimal
     {
         string Speak();
