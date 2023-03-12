@@ -12,6 +12,8 @@ using Design_Pattern.SingletonPattern;
 using Design_Pattern.Structural_Design_Pattern.Adapter;
 using Design_Pattern.Creational_Design_Pattern.Factory_Method_2;
 using Design_Pattern.Creational_Design_Pattern.Abstract_Factory_02;
+using Design_Pattern.Structural_Design_Pattern.Facade;
+using Design_Pattern.Structural_Design_Pattern.Decorator;
 
 namespace Design_Pattern
 {
@@ -29,7 +31,7 @@ namespace Design_Pattern
 
             //CallAbstractFactoryDesignPattern();
 
-            CallAbstractFactory_02_DesignPattern();
+            //CallAbstractFactory_02_DesignPattern();
 
             //CallBuilderDesignPattern();
 
@@ -46,6 +48,10 @@ namespace Design_Pattern
 
             //----------------Structural Design Pattern-----------------
             //CallAdapterDesignPattern();
+
+            //CallFacadeDesignPattern();
+
+            CallDecoratorDesignPattern();
 
 
 
@@ -244,6 +250,26 @@ namespace Design_Pattern
             ITarget target = new EmployeeAdapter();
             target.ProcessCompanySalary(employeesArray);
         }
+
+
+        static void CallFacadeDesignPattern()
+        {
+            VideoConverter converter = new VideoConverter(@"D:\Image\abc.mpeg");
+            converter.Convert("MP4");
+        }
+
+        static void CallDecoratorDesignPattern()
+        {
+            ICake cake = new ChokolateCake();
+            cake.AddLayer("Basic layer");
+
+            ICakeDecorator cakeDecorator = new CakeMessageDecorator(cake);
+            cakeDecorator.Decorate("Happy Birthday");
+
+            cake.PrintLayers();
+        }
+
+
         #endregion
 
 

@@ -28,6 +28,7 @@ namespace Design_Pattern.SingletonPattern
                     {
                         if (instance == null)
                             instance = new Singleton();
+                        return instance;
                     }
                 }
 

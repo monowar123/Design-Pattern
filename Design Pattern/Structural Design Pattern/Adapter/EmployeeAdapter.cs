@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Design_Pattern.Structural_Design_Pattern.Adapter
 {
-    public class EmployeeAdapter : ITarget
+    public class EmployeeAdapter : ThirdPartyBillingSystem, ITarget   //--Class adapter
     {
-        ThirdPartyBillingSystem thirdPartyBillingSystem;
+        //--Object adapter
+        //ThirdPartyBillingSystem thirdPartyBillingSystem;
 
         public EmployeeAdapter()
         {
-            thirdPartyBillingSystem = new ThirdPartyBillingSystem();
+            //--Object adapter
+            //thirdPartyBillingSystem = new ThirdPartyBillingSystem();
         }
         public void ProcessCompanySalary(string[,] employeesArray)
         {
@@ -42,7 +44,11 @@ namespace Design_Pattern.Structural_Design_Pattern.Adapter
 
             Console.WriteLine("Deligate to the ThirdPartyBillingSystem to process employee salary");
 
-            thirdPartyBillingSystem.ProcessSalary(employeeList);
+            //--Object adapter
+            //thirdPartyBillingSystem.ProcessSalary(employeeList);
+
+            //--Class adapter
+            ProcessSalary(employeeList);
         }
 
 
