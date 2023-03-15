@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Design_Pattern.Structural_Design_Pattern.Decorator
 {
-    public interface ICakeDecorator
+    public interface ICakeDecorator : ICake
     {
         void Decorate(string message);
     }
@@ -18,9 +18,20 @@ namespace Design_Pattern.Structural_Design_Pattern.Decorator
         {
             this.cake = cake;
         }
+
+        public void AddLayer(string layer)
+        {
+            cake.AddLayer(layer);
+        }
+
         public void Decorate(string message)
         {
             cake.AddLayer($"Message for the cake: {message}");
+        }
+
+        public void PrintLayers()
+        {
+            cake.PrintLayers();
         }
     }
 }

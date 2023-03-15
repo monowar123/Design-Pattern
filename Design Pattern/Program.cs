@@ -14,6 +14,7 @@ using Design_Pattern.Creational_Design_Pattern.Factory_Method_2;
 using Design_Pattern.Creational_Design_Pattern.Abstract_Factory_02;
 using Design_Pattern.Structural_Design_Pattern.Facade;
 using Design_Pattern.Structural_Design_Pattern.Decorator;
+using Design_Pattern.Structural_Design_Pattern.Decorator_02;
 
 namespace Design_Pattern
 {
@@ -51,7 +52,9 @@ namespace Design_Pattern
 
             //CallFacadeDesignPattern();
 
-            CallDecoratorDesignPattern();
+            //CallDecoratorDesignPattern();
+
+            CallDecorator_02_DesignPattern();
 
 
 
@@ -149,6 +152,8 @@ namespace Design_Pattern
             report.DisplayReport();
         }
 
+
+        //-------Method chaining (Fluent Interface)-----------------
         static void CallFluentInterfaceDesignPattern()
         {
 
@@ -164,7 +169,7 @@ namespace Design_Pattern
         }
 
 
-        //----------Used for Deep copy of object-----------
+        //----------Used for Deep copy of object (Prototype)-----------
         static void CallPrototypeDesignPattern()
         {
             Person p1 = new Person()
@@ -260,13 +265,30 @@ namespace Design_Pattern
 
         static void CallDecoratorDesignPattern()
         {
-            ICake cake = new ChokolateCake();
-            cake.AddLayer("Basic layer");
+            //ICake cake = new ChokolateCake();
+            //cake.AddLayer("Basic layer");
 
-            ICakeDecorator cakeDecorator = new CakeMessageDecorator(cake);
+            //ICakeDecorator cakeDecorator = new CakeMessageDecorator(cake);
+            //cakeDecorator.Decorate("Happy Birthday");
+            //cake.PrintLayers();
+
+            ICakeDecorator cakeDecorator = new CakeMessageDecorator(new ChokolateCake());
+            cakeDecorator.AddLayer("Basic Layer");
             cakeDecorator.Decorate("Happy Birthday");
+            cakeDecorator.PrintLayers(); 
+        }
 
-            cake.PrintLayers();
+        static void CallDecorator_02_DesignPattern()
+        {
+            //IWidget widget = new TextField(10, 12);
+            //widget.Draw();
+
+            BorderDecorator borderDecorator = new BorderDecorator(new TextField(10, 12));
+            borderDecorator.DrawWithFeature();
+
+            ScrollbarDecorator scrollbarDecorator = new ScrollbarDecorator(new TextField(15, 20));
+            scrollbarDecorator.DrawWithFeature();
+                
         }
 
 
