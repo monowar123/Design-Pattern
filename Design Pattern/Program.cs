@@ -16,6 +16,7 @@ using Design_Pattern.Structural_Design_Pattern.Facade;
 using Design_Pattern.Structural_Design_Pattern.Decorator;
 using Design_Pattern.Structural_Design_Pattern.Decorator_02;
 using Design_Pattern.Structural_Design_Pattern.Bridge;
+using Design_Pattern.Structural_Design_Pattern.Bridge_02;
 
 namespace Design_Pattern
 {
@@ -57,7 +58,9 @@ namespace Design_Pattern
 
             //CallDecorator_02_DesignPattern();
 
-            CallBridgeDesignPattern();
+            //CallBridgeDesignPattern();
+
+            CallBridge_02_DesignPattern();
 
 
             Console.ReadKey();
@@ -306,6 +309,15 @@ namespace Design_Pattern
             remote2.VolumeUp();
             remote2.ToggleMute();
 
+        }
+
+        static void CallBridge_02_DesignPattern()
+        {
+            Notifier notifier = new ShortMessageNotifier(new SMSSender());
+            notifier.Notify("Call me.");
+
+            notifier = new LongMessageNotifier(new EmailSender());
+            notifier.Notify("Hello how are you?");
         }
 
 
