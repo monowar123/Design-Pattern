@@ -15,6 +15,7 @@ using Design_Pattern.Creational_Design_Pattern.Abstract_Factory_02;
 using Design_Pattern.Structural_Design_Pattern.Facade;
 using Design_Pattern.Structural_Design_Pattern.Decorator;
 using Design_Pattern.Structural_Design_Pattern.Decorator_02;
+using Design_Pattern.Structural_Design_Pattern.Bridge;
 
 namespace Design_Pattern
 {
@@ -54,8 +55,9 @@ namespace Design_Pattern
 
             //CallDecoratorDesignPattern();
 
-            CallDecorator_02_DesignPattern();
+            //CallDecorator_02_DesignPattern();
 
+            CallBridgeDesignPattern();
 
 
             Console.ReadKey();
@@ -289,6 +291,21 @@ namespace Design_Pattern
             ScrollbarDecorator scrollbarDecorator = new ScrollbarDecorator(new TextField(15, 20));
             scrollbarDecorator.DrawWithFeature();
                 
+        }
+
+        static void CallBridgeDesignPattern()
+        {
+            IDevice tv = new TV();
+            RemoteControl remote = new RemoteControl(tv);
+            remote.TogglePower();
+            remote.ChannelUp();
+
+            IDevice radio = new Radio();
+            AdvanceRemoteControl remote2 = new AdvanceRemoteControl(radio);
+            remote2.TogglePower();
+            remote2.VolumeUp();
+            remote2.ToggleMute();
+
         }
 
 

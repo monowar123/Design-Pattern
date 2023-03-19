@@ -78,6 +78,8 @@
     <Compile Include="Structural Design Pattern\Adapter\EmployeeAdapter.cs" />
     <Compile Include="Structural Design Pattern\Adapter\ITarget.cs" />
     <Compile Include="Structural Design Pattern\Adapter\ThirdPartyBillingSystem.cs" />
+    <Compile Include="Structural Design Pattern\Bridge\IDevice.cs" />
+    <Compile Include="Structural Design Pattern\Bridge\RamoteControl.cs" />
     <Compile Include="Structural Design Pattern\Decorator 02\IWidget.cs" />
     <Compile Include="Structural Design Pattern\Decorator 02\IWidgetDecorator.cs" />
     <Compile Include="Structural Design Pattern\Decorator\ICake.cs" />
