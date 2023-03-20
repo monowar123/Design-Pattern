@@ -82,6 +82,8 @@
     <Compile Include="Structural Design Pattern\Bridge 02\Notifier.cs" />
     <Compile Include="Structural Design Pattern\Bridge\IDevice.cs" />
     <Compile Include="Structural Design Pattern\Bridge\RamoteControl.cs" />
+    <Compile Include="Structural Design Pattern\Composite 02\CompoundGraphic.cs" />
+    <Compile Include="Structural Design Pattern\Composite 02\IGraphis.cs" />
     <Compile Include="Structural Design Pattern\Decorator 02\IWidget.cs" />
     <Compile Include="Structural Design Pattern\Decorator 02\IWidgetDecorator.cs" />
     <Compile Include="Structural Design Pattern\Decorator\ICake.cs" />
