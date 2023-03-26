@@ -18,6 +18,7 @@ using Design_Pattern.Structural_Design_Pattern.Decorator_02;
 using Design_Pattern.Structural_Design_Pattern.Bridge;
 using Design_Pattern.Structural_Design_Pattern.Bridge_02;
 using Design_Pattern.Structural_Design_Pattern.Composite;
+using Design_Pattern.Structural_Design_Pattern.Composite_02;
 
 namespace Design_Pattern
 {
@@ -64,6 +65,7 @@ namespace Design_Pattern
             //CallBridge_02_DesignPattern();
 
             CallCompositeDesignPattern();
+            CallComposite_02_DesignPattern();
 
 
             Console.ReadKey();
@@ -323,6 +325,7 @@ namespace Design_Pattern
             notifier.Notify("Hello how are you?");
         }
 
+<<<<<<< HEAD
         static void CallCompositeDesignPattern()
         {
             //Creating leaf objects
@@ -360,6 +363,19 @@ namespace Design_Pattern
             computer.DisplayPrice();
             totalPrice = computer.GetTotalPrice();
             Console.WriteLine("Total price: {0}", totalPrice);
+=======
+        static void CallComposite_02_DesignPattern()
+        {
+            CompoundGraphic compoundGraphic = new CompoundGraphic();
+            compoundGraphic.Add(new Dot(10, 20));
+            compoundGraphic.Add(new Circle(15, 15, 5));
+            compoundGraphic.Draw();
+
+            Console.WriteLine("------------");
+
+            compoundGraphic.Move(5, 5);
+            compoundGraphic.Draw();
+>>>>>>> 2ed678c99953f5fd621aa6930f74f05e4afddc93
         }
 
 
