@@ -17,6 +17,7 @@ using Design_Pattern.Structural_Design_Pattern.Decorator;
 using Design_Pattern.Structural_Design_Pattern.Decorator_02;
 using Design_Pattern.Structural_Design_Pattern.Bridge;
 using Design_Pattern.Structural_Design_Pattern.Bridge_02;
+using Design_Pattern.Structural_Design_Pattern.Composite;
 
 namespace Design_Pattern
 {
@@ -60,7 +61,9 @@ namespace Design_Pattern
 
             //CallBridgeDesignPattern();
 
-            CallBridge_02_DesignPattern();
+            //CallBridge_02_DesignPattern();
+
+            CallCompositeDesignPattern();
 
 
             Console.ReadKey();
@@ -318,6 +321,45 @@ namespace Design_Pattern
 
             notifier = new LongMessageNotifier(new EmailSender());
             notifier.Notify("Hello how are you?");
+        }
+
+        static void CallCompositeDesignPattern()
+        {
+            //Creating leaf objects
+            IComponent hardDisk = new Leaf("Hard Disk", 2000);
+            IComponent ram = new Leaf("RAM", 3000);
+            IComponent cpu = new Leaf("CPU", 2000);
+            IComponent mouse = new Leaf("Mouse", 500);
+            IComponent keyBoard = new Leaf("KeyBoard", 1000);
+
+            //Creating composite objects
+            Composite motherBoard = new Composite("Motherboard");
+            Composite cabinet = new Composite("Cabinet");
+            Composite peripherals = new Composite("Peripherals");
+            Composite computer = new Composite("Computer");
+
+            motherBoard.AddComponent(cpu);
+            motherBoard.AddComponent(ram);
+
+            cabinet.AddComponent(hardDisk);
+            cabinet.AddComponent(motherBoard);
+
+            peripherals.AddComponent(mouse);
+            peripherals.AddComponent(keyBoard);
+
+            computer.AddComponent(cabinet);
+            computer.AddComponent(peripherals);
+
+            //Display price
+            peripherals.DisplayPrice();
+            int totalPrice = peripherals.GetTotalPrice();
+            Console.WriteLine("Total price: {0}", totalPrice);
+
+            Console.WriteLine("--------------");
+
+            computer.DisplayPrice();
+            totalPrice = computer.GetTotalPrice();
+            Console.WriteLine("Total price: {0}", totalPrice);
         }
 
 
