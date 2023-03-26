@@ -64,7 +64,8 @@ namespace Design_Pattern
 
             //CallBridge_02_DesignPattern();
 
-            CallCompositeDesignPattern();
+            //CallCompositeDesignPattern();
+
             CallComposite_02_DesignPattern();
 
 
@@ -325,7 +326,7 @@ namespace Design_Pattern
             notifier.Notify("Hello how are you?");
         }
 
-<<<<<<< HEAD
+
         static void CallCompositeDesignPattern()
         {
             //Creating leaf objects
@@ -363,7 +364,8 @@ namespace Design_Pattern
             computer.DisplayPrice();
             totalPrice = computer.GetTotalPrice();
             Console.WriteLine("Total price: {0}", totalPrice);
-=======
+        }
+
         static void CallComposite_02_DesignPattern()
         {
             CompoundGraphic compoundGraphic = new CompoundGraphic();
@@ -375,7 +377,6 @@ namespace Design_Pattern
 
             compoundGraphic.Move(5, 5);
             compoundGraphic.Draw();
->>>>>>> 2ed678c99953f5fd621aa6930f74f05e4afddc93
         }
 
 
